@@ -25,6 +25,9 @@ const Deck = ({ cards, excludeMemorized }) => {
     }
   }, [memorizedIds]);
 
+  const prevCardsRef = React.useRef(cards);
+  const prevExcludeRef = React.useRef(excludeMemorized);
+
   // Initialize and filter cards based on props
   useEffect(() => {
     let filtered = cards;
@@ -32,7 +35,19 @@ const Deck = ({ cards, excludeMemorized }) => {
       filtered = cards.filter(card => !memorizedIds.has(card.id));
     }
     setCurrentCards(filtered);
-    setCurrentIndex(0);
+    
+    // If cards or excludeMemorized changed, reset index to 0
+    if (prevCardsRef.current !== cards || prevExcludeRef.current !== excludeMemorized) {
+      setCurrentIndex(0);
+      prevCardsRef.current = cards;
+      prevExcludeRef.current = excludeMemorized;
+    } else {
+      // If only memorizedIds changed, keep the index (bound by new length)
+      setCurrentIndex(prev => {
+        if (filtered.length === 0) return 0;
+        return Math.min(prev, filtered.length - 1);
+      });
+    }
   }, [cards, excludeMemorized, memorizedIds]);
 
   const handleNext = () => {
