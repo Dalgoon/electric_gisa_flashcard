@@ -37055,6 +37055,8 @@ var Deck = ({ cards, excludeMemorized }) => {
 	const [currentCards, setCurrentCards] = (0, import_react.useState)([]);
 	const [currentIndex, setCurrentIndex] = (0, import_react.useState)(0);
 	const [isFlipped, setIsFlipped] = (0, import_react.useState)(false);
+	const [touchStart, setTouchStart] = (0, import_react.useState)(null);
+	const [touchEnd, setTouchEnd] = (0, import_react.useState)(null);
 	const [memorizedIds, setMemorizedIds] = (0, import_react.useState)(() => {
 		try {
 			const saved = localStorage.getItem("memorizedIds");
@@ -37099,6 +37101,22 @@ var Deck = ({ cards, excludeMemorized }) => {
 	const handleShuffle = () => {
 		setCurrentCards([...currentCards].sort(() => Math.random() - .5));
 		setCurrentIndex(0);
+	};
+	const minSwipeDistance = 50;
+	const onTouchStart = (e) => {
+		setTouchEnd(null);
+		setTouchStart(e.targetTouches[0].clientX);
+	};
+	const onTouchMove = (e) => {
+		setTouchEnd(e.targetTouches[0].clientX);
+	};
+	const onTouchEndHandler = () => {
+		if (!touchStart || !touchEnd) return;
+		const distance = touchStart - touchEnd;
+		const isLeftSwipe = distance > minSwipeDistance;
+		const isRightSwipe = distance < -minSwipeDistance;
+		if (isLeftSwipe) handleNext();
+		if (isRightSwipe) handlePrev();
 	};
 	const toggleMemorized = () => {
 		if (currentCards.length === 0) return;
@@ -37148,11 +37166,17 @@ var Deck = ({ cards, excludeMemorized }) => {
 					})
 				})]
 			}),
-			/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Flashcard, {
-				card: currentCard,
-				isFlipped,
-				setIsFlipped,
-				isMemorized: isCurrentMemorized
+			/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+				onTouchStart,
+				onTouchMove,
+				onTouchEnd: onTouchEndHandler,
+				style: { width: "100%" },
+				children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Flashcard, {
+					card: currentCard,
+					isFlipped,
+					setIsFlipped,
+					isMemorized: isCurrentMemorized
+				})
 			}),
 			/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
 				className: "deck-controls",
