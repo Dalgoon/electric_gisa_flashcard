@@ -7,7 +7,23 @@ const Deck = ({ cards, excludeMemorized }) => {
   const [currentCards, setCurrentCards] = useState([]);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isFlipped, setIsFlipped] = useState(false);
-  const [memorizedIds, setMemorizedIds] = useState(new Set());
+  const [memorizedIds, setMemorizedIds] = useState(() => {
+    try {
+      const saved = localStorage.getItem('memorizedIds');
+      if (saved) return new Set(JSON.parse(saved));
+    } catch (e) {
+      console.error('Failed to load memorized cards', e);
+    }
+    return new Set();
+  });
+
+  useEffect(() => {
+    try {
+      localStorage.setItem('memorizedIds', JSON.stringify(Array.from(memorizedIds)));
+    } catch (e) {
+      console.error('Failed to save memorized cards', e);
+    }
+  }, [memorizedIds]);
 
   // Initialize and filter cards based on props
   useEffect(() => {

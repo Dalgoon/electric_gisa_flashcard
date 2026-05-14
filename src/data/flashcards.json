@@ -173,5 +173,110 @@
     "topic": "자기 인덕턴스 에너지",
     "question": "인덕턴스 $L$ 인 코일에 전류 $I$ 가 흐를 때 축적되는 자기에너지 $W$는?",
     "answer": "$W = \\frac{1}{2} L I^2 \\, [\\text{J}]$"
+  },
+  {
+    "id": "em-26",
+    "chapter": "전기자기학",
+    "topic": "원형 선전류 중심의 자계",
+    "question": "반지름 $a$ 인 원형 도선에 전류 $I$ 가 흐를 때, 원의 중심에서의 자계의 세기 $H$는?",
+    "answer": "$H = \\frac{I}{2a} \\, [\\text{AT/m}]$"
+  },
+  {
+    "id": "em-27",
+    "chapter": "전기자기학",
+    "topic": "솔레노이드 중심의 자계",
+    "question": "단위 길이당 권수가 $n$ 인 무한장 환상 솔레노이드 중심의 자계의 세기 $H$는?",
+    "answer": "$H = nI \\, [\\text{AT/m}]$"
+  },
+  {
+    "id": "em-28",
+    "chapter": "전기자기학",
+    "topic": "앙페르의 주회 적분 법칙",
+    "question": "임의의 폐곡선에 대한 자계 $H$ 의 선적분은 무엇과 같은가?",
+    "answer": "$\\oint \\mathbf{H} \\cdot d\\mathbf{l} = \\sum I$\n\n(폐곡선 내부를 통과하는 총 전류의 합과 같다)"
+  },
+  {
+    "id": "em-29",
+    "chapter": "전기자기학",
+    "topic": "자성체의 자화의 세기",
+    "question": "자성체의 자화의 세기 $J$ 와 자계 $H$ 의 관계식은? (자화율 $\\chi$ 이용)",
+    "answer": "$J = \\mu_0(\\mu_s - 1)H = \\chi H \\, [\\text{Wb/m}^2]$"
+  },
+  {
+    "id": "em-30",
+    "chapter": "전기자기학",
+    "topic": "자기회로의 자기 저항",
+    "question": "길이 $l$, 단면적 $S$, 투자율 $\\mu$ 인 자성체의 자기 저항 $R_m$ 은?",
+    "answer": "$R_m = \\frac{l}{\\mu S} \\, [\\text{AT/Wb}]$"
+  },
+  {
+    "id": "em-31",
+    "chapter": "전기자기학",
+    "topic": "환상 솔레노이드의 자기 인덕턴스",
+    "question": "권수 $N$, 길이 $l$, 단면적 $S$, 투자율 $\\mu$ 인 환상 솔레노이드의 자기 인덕턴스 $L$ 은?",
+    "answer": "$L = \\frac{\\mu S N^2}{l} \\, [\\text{H}]$"
+  },
+  {
+    "id": "em-32",
+    "chapter": "전기자기학",
+    "topic": "상호 인덕턴스와 결합 계수",
+    "question": "두 코일의 자기 인덕턴스가 각각 $L_1, L_2$ 이고 상호 인덕턴스가 $M$ 일 때 결합 계수 $k$ 는?",
+    "answer": "$k = \\frac{M}{\\sqrt{L_1 L_2}} \\quad (0 \\le k \\le 1)$"
+  },
+  {
+    "id": "em-33",
+    "chapter": "전기자기학",
+    "topic": "변위 전류 밀도",
+    "question": "유전체에 교류 전압이 인가될 때 흐르는 변위 전류 밀도 $i_d$ 는?",
+    "answer": "$i_d = \\frac{\\partial D}{\\partial t} = \\varepsilon \\frac{\\partial E}{\\partial t} \\, [\\text{A/m}^2]$"
+  },
+  {
+    "id": "em-34",
+    "chapter": "전기자기학",
+    "topic": "맥스웰의 전자 방정식 1",
+    "question": "전계의 회전 $\\nabla \\times \\mathbf{E}$ (패러데이 법칙의 미분형)는 무엇과 같은가?",
+    "answer": "$\\nabla \\times \\mathbf{E} = -\\frac{\\partial \\mathbf{B}}{\\partial t}$\n\n(자속밀도의 시간적 감소율)"
+  },
+  {
+    "id": "em-35",
+    "chapter": "전기자기학",
+    "topic": "맥스웰의 전자 방정식 2",
+    "question": "자계의 회전 $\\nabla \\times \\mathbf{H}$ (확장된 앙페르의 법칙)는 무엇과 같은가?",
+    "answer": "$\\nabla \\times \\mathbf{H} = \\mathbf{i} + \\frac{\\partial \\mathbf{D}}{\\partial t} = \\mathbf{i} + \\mathbf{i_d}$\n\n(전도 전류 밀도와 변위 전류 밀도의 합)"
+  },
+  {
+    "id": "em-36",
+    "chapter": "전기자기학",
+    "topic": "전자파의 전파 속도",
+    "question": "유전율 $\\varepsilon$, 투자율 $\\mu$ 인 매질에서 전자파의 속도 $v$ 는?",
+    "answer": "$v = \\frac{1}{\\sqrt{\\varepsilon \\mu}} = \\frac{c}{\\sqrt{\\varepsilon_s \\mu_s}} \\, [\\text{m/s}]$\n\n($c$: 진공 중의 빛의 속도 $3 \\times 10^8$)"
+  },
+  {
+    "id": "em-37",
+    "chapter": "전기자기학",
+    "topic": "포인팅 벡터",
+    "question": "전자계 에너지의 이동 방향과 단위 면적당 전력을 나타내는 포인팅 벡터 $\\mathbf{P}$ 의 정의는?",
+    "answer": "$\\mathbf{P} = \\mathbf{E} \\times \\mathbf{H} \\, [\\text{W/m}^2]$\n\n크기: $P = EH = \\frac{E^2}{Z_0} = H^2 Z_0$"
+  },
+  {
+    "id": "em-38",
+    "chapter": "전기자기학",
+    "topic": "고유 임피던스 (파동 임피던스)",
+    "question": "유전율 $\\varepsilon$, 투자율 $\\mu$ 인 매질에서 고유 임피던스 $Z_0$ 는?",
+    "answer": "$Z_0 = \\frac{E}{H} = \\sqrt{\\frac{\\mu}{\\varepsilon}} \\, [\\Omega]$\n\n진공 중의 고유 임피던스 $\\approx 377\\Omega$"
+  },
+  {
+    "id": "em-39",
+    "chapter": "전기자기학",
+    "topic": "스넬의 법칙 (자계 경계 조건)",
+    "question": "서로 다른 투자율 $\\mu_1, \\mu_2$ 를 갖는 자성체 경계면에서의 굴절 법칙은?",
+    "answer": "$\\frac{\\tan\\theta_1}{\\tan\\theta_2} = \\frac{\\mu_1}{\\mu_2}$"
+  },
+  {
+    "id": "em-40",
+    "chapter": "전기자기학",
+    "topic": "유도 기전력 (플레밍의 오른손 법칙)",
+    "question": "자속밀도 $B$ 의 공간에서 길이 $l$ 인 도선이 속도 $v$ 로 이동할 때 발생하는 유도 기전력 $e$ 는?",
+    "answer": "$e = B l v \\sin\\theta \\, [\\text{V}]$\n\n벡터식: $e = (\\mathbf{v} \\times \\mathbf{B}) \\cdot \\mathbf{l}$"
   }
 ]
