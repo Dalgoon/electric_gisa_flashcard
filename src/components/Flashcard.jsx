@@ -28,7 +28,9 @@ const Flashcard = ({ card, isFlipped, setIsFlipped, isMemorized }) => {
             {isMemorized && <CheckCircle size={24} color="#10b981" />}
           </div>
           <div className="card-content">
-            <TextWithMath text={card.question} />
+            <div>
+              <TextWithMath text={card.question} />
+            </div>
           </div>
           <div className="card-footer">
             Click to see the answer
@@ -42,7 +44,9 @@ const Flashcard = ({ card, isFlipped, setIsFlipped, isMemorized }) => {
             {isMemorized && <CheckCircle size={24} color="#10b981" />}
           </div>
           <div className="card-content">
-            <TextWithMath text={card.answer} />
+            <div>
+              <TextWithMath text={card.answer} />
+            </div>
           </div>
           <div className="card-footer">
             Click to see the question

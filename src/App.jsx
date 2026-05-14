@@ -22,7 +22,7 @@ function App() {
   return (
     <div className="app-container">
       <header>
-        <h1>전기기사 치트키</h1>
+        <h1>전기기사 플래시</h1>
         <p>Premium Flashcards for Electromagnetics</p>
       </header>
 
