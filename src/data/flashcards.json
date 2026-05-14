@@ -53,7 +53,7 @@
     "chapter": "전기자기학",
     "topic": "2. 쿨롱의 힘",
     "question": "진공 중의 유전율 $\\varepsilon_0$ 의 값은?",
-    "answer": "$\\varepsilon_0 = \\frac{1}{36\\pi} \\times 10^{-9} \\approx 8.855 \\times 10^{-12} \\, [\\text{F/m}]$"
+    "answer": "$\\varepsilon_0 = \\frac{1}{36\\pi} \\times 10^{-9} \\approx 8.854 \\times 10^{-12} \\, [\\text{F/m}]$"
   },
   {
     "id": "em-3-1",
@@ -732,7 +732,7 @@
     "chapter": "회로이론",
     "topic": "5. 유도 결합 회로",
     "question": "자기 인덕턴스 $L_1, L_2$ 이고 상호 인덕턴스 $M$ 인 두 코일의 가동 접속 합성 인덕턴스는?",
-    "answer": "$L = L_1 + L_2 + 2M$"
+    "answer": "$L = L_1 + L_2 + 2M$\n(참고: 차동 접속인 경우 $L = L_1 + L_2 - 2M$)"
   },
   {
     "id": "ct-6-1",
