@@ -37057,6 +37057,8 @@ var Deck = ({ cards, excludeMemorized }) => {
 	const [isFlipped, setIsFlipped] = (0, import_react.useState)(false);
 	const [touchStart, setTouchStart] = (0, import_react.useState)(null);
 	const [touchEnd, setTouchEnd] = (0, import_react.useState)(null);
+	const [slideDirection, setSlideDirection] = (0, import_react.useState)(null);
+	const [isAnimating, setIsAnimating] = (0, import_react.useState)(false);
 	const [memorizedIds, setMemorizedIds] = (0, import_react.useState)(() => {
 		try {
 			const saved = localStorage.getItem("memorizedIds");
@@ -37092,11 +37094,27 @@ var Deck = ({ cards, excludeMemorized }) => {
 		excludeMemorized,
 		memorizedIds
 	]);
+	const animateToNextCard = (nextIndexFn, direction) => {
+		if (isAnimating) return;
+		setIsAnimating(true);
+		setIsFlipped(false);
+		setSlideDirection(`slide-out-${direction}`);
+		setTimeout(() => {
+			nextIndexFn();
+			setSlideDirection(`slide-in-${direction === "left" ? "right" : "left"}`);
+			setTimeout(() => {
+				setSlideDirection(null);
+				setTimeout(() => {
+					setIsAnimating(false);
+				}, 250);
+			}, 50);
+		}, 250);
+	};
 	const handleNext = () => {
-		if (currentIndex < currentCards.length - 1) setCurrentIndex(currentIndex + 1);
+		if (currentIndex < currentCards.length - 1 && !isAnimating) animateToNextCard(() => setCurrentIndex((prev) => prev + 1), "left");
 	};
 	const handlePrev = () => {
-		if (currentIndex > 0) setCurrentIndex(currentIndex - 1);
+		if (currentIndex > 0 && !isAnimating) animateToNextCard(() => setCurrentIndex((prev) => prev - 1), "right");
 	};
 	const handleShuffle = () => {
 		setCurrentCards([...currentCards].sort(() => Math.random() - .5));
@@ -37117,6 +37135,25 @@ var Deck = ({ cards, excludeMemorized }) => {
 		const isRightSwipe = distance < -minSwipeDistance;
 		if (isLeftSwipe) handleNext();
 		if (isRightSwipe) handlePrev();
+		setTouchStart(null);
+		setTouchEnd(null);
+	};
+	const onMouseDown = (e) => {
+		setTouchEnd(null);
+		setTouchStart(e.clientX);
+	};
+	const onMouseMove = (e) => {
+		if (e.buttons === 1 && touchStart !== null) setTouchEnd(e.clientX);
+	};
+	const onMouseUp = () => {
+		if (touchStart !== null && touchEnd !== null) onTouchEndHandler();
+	};
+	const onMouseLeave = () => {
+		if (touchStart !== null && touchEnd !== null) onTouchEndHandler();
+		else {
+			setTouchStart(null);
+			setTouchEnd(null);
+		}
 	};
 	const toggleMemorized = () => {
 		if (currentCards.length === 0) return;
@@ -37170,7 +37207,16 @@ var Deck = ({ cards, excludeMemorized }) => {
 				onTouchStart,
 				onTouchMove,
 				onTouchEnd: onTouchEndHandler,
-				style: { width: "100%" },
+				onMouseDown,
+				onMouseMove,
+				onMouseUp,
+				onMouseLeave,
+				className: `swipe-wrapper ${slideDirection ? `anim-${slideDirection}` : ""}`,
+				style: {
+					width: "100%",
+					userSelect: "none",
+					cursor: "grab"
+				},
 				children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Flashcard, {
 					card: currentCard,
 					isFlipped,
