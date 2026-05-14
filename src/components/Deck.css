@@ -3,6 +3,7 @@
   flex-direction: column;
   align-items: center;
   width: 100%;
+  overflow-x: hidden;
 }
 
 .deck-controls {
@@ -95,4 +96,31 @@
     width: 100%;
     justify-content: center;
   }
+}
+
+/* Swipe Animations */
+.swipe-wrapper {
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease;
+}
+
+.anim-slide-out-left {
+  transform: translateX(-150%);
+  opacity: 0;
+}
+
+.anim-slide-out-right {
+  transform: translateX(150%);
+  opacity: 0;
+}
+
+.anim-slide-in-right {
+  transform: translateX(150%);
+  opacity: 0;
+  transition: none !important;
+}
+
+.anim-slide-in-left {
+  transform: translateX(-150%);
+  opacity: 0;
+  transition: none !important;
 }

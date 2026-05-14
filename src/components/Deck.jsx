@@ -9,6 +9,8 @@ const Deck = ({ cards, excludeMemorized }) => {
   const [isFlipped, setIsFlipped] = useState(false);
   const [touchStart, setTouchStart] = useState(null);
   const [touchEnd, setTouchEnd] = useState(null);
+  const [slideDirection, setSlideDirection] = useState(null);
+  const [isAnimating, setIsAnimating] = useState(false);
   const [memorizedIds, setMemorizedIds] = useState(() => {
     try {
       const saved = localStorage.getItem('memorizedIds');
@@ -52,15 +54,43 @@ const Deck = ({ cards, excludeMemorized }) => {
     }
   }, [cards, excludeMemorized, memorizedIds]);
 
+  const animateToNextCard = (nextIndexFn, direction) => {
+    if (isAnimating) return;
+    setIsAnimating(true);
+    setIsFlipped(false);
+    
+    // Slide out current card
+    setSlideDirection(`slide-out-${direction}`);
+    
+    setTimeout(() => {
+      // Change card index
+      nextIndexFn();
+      
+      // Prepare for slide in
+      const opposite = direction === 'left' ? 'right' : 'left';
+      setSlideDirection(`slide-in-${opposite}`);
+      
+      // Start sliding in
+      setTimeout(() => {
+        setSlideDirection(null); // Removes transform to slide into center
+        
+        // Finish animation
+        setTimeout(() => {
+          setIsAnimating(false);
+        }, 250);
+      }, 50); // small delay to allow DOM to register the slide-in class
+    }, 250);
+  };
+
   const handleNext = () => {
-    if (currentIndex < currentCards.length - 1) {
-      setCurrentIndex(currentIndex + 1);
+    if (currentIndex < currentCards.length - 1 && !isAnimating) {
+      animateToNextCard(() => setCurrentIndex(prev => prev + 1), 'left');
     }
   };
 
   const handlePrev = () => {
-    if (currentIndex > 0) {
-      setCurrentIndex(currentIndex - 1);
+    if (currentIndex > 0 && !isAnimating) {
+      animateToNextCard(() => setCurrentIndex(prev => prev - 1), 'right');
     }
   };
 
@@ -98,6 +128,35 @@ const Deck = ({ cards, excludeMemorized }) => {
     }
     if (isRightSwipe) {
       handlePrev();
+    }
+    setTouchStart(null);
+    setTouchEnd(null);
+  };
+
+  // Mouse Swipe Handlers
+  const onMouseDown = (e) => {
+    setTouchEnd(null);
+    setTouchStart(e.clientX);
+  };
+
+  const onMouseMove = (e) => {
+    if (e.buttons === 1 && touchStart !== null) { // Only track if mouse is clicked down
+      setTouchEnd(e.clientX);
+    }
+  };
+
+  const onMouseUp = () => {
+    if (touchStart !== null && touchEnd !== null) {
+      onTouchEndHandler();
+    }
+  };
+  
+  const onMouseLeave = () => {
+    if (touchStart !== null && touchEnd !== null) {
+      onTouchEndHandler();
+    } else {
+      setTouchStart(null);
+      setTouchEnd(null);
     }
   };
 
@@ -152,7 +211,12 @@ const Deck = ({ cards, excludeMemorized }) => {
         onTouchStart={onTouchStart}
         onTouchMove={onTouchMove}
         onTouchEnd={onTouchEndHandler}
-        style={{ width: '100%' }}
+        onMouseDown={onMouseDown}
+        onMouseMove={onMouseMove}
+        onMouseUp={onMouseUp}
+        onMouseLeave={onMouseLeave}
+        className={`swipe-wrapper ${slideDirection ? `anim-${slideDirection}` : ''}`}
+        style={{ width: '100%', userSelect: 'none', cursor: 'grab' }}
       >
         <Flashcard 
           card={currentCard} 
