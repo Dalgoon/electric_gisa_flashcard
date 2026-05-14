@@ -77,6 +77,14 @@
   text-align: center;
   font-size: 1.25rem;
   line-height: 1.6;
+  width: 100%;
+}
+
+.card-content > div {
+  max-width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding-bottom: 0.5rem;
 }
 
 .flashcard-front .card-content {
@@ -101,6 +109,10 @@
 
 .katex-display {
   margin: 1rem 0;
+  max-width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding-bottom: 0.5rem;
 }
 
 /* Mobile Responsive */
