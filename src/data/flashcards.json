@@ -1,282 +1,674 @@
 [
   {
-    "id": "em-1",
+    "id": "em-1-1",
     "chapter": "전기자기학",
-    "topic": "쿨롱의 법칙",
-    "question": "두 점전하 $Q_1, Q_2$ 사이에 작용하는 정전기력(쿨롱의 힘) $F$의 크기는?",
+    "topic": "1. 벡터",
+    "question": "두 벡터 $\\mathbf{A}, \\mathbf{B}$ 사이의 내적(Dot Product) $\\mathbf{A} \\cdot \\mathbf{B}$ 의 크기는?",
+    "answer": "$\\mathbf{A} \\cdot \\mathbf{B} = |\\mathbf{A}||\\mathbf{B}| \\cos\\theta$"
+  },
+  {
+    "id": "em-1-2",
+    "chapter": "전기자기학",
+    "topic": "1. 벡터",
+    "question": "두 벡터 $\\mathbf{A}, \\mathbf{B}$ 사이의 외적(Cross Product) $\\mathbf{A} \\times \\mathbf{B}$ 의 크기는?",
+    "answer": "$|\\mathbf{A} \\times \\mathbf{B}| = |\\mathbf{A}||\\mathbf{B}| \\sin\\theta$"
+  },
+  {
+    "id": "em-1-3",
+    "chapter": "전기자기학",
+    "topic": "1. 벡터",
+    "question": "어떤 스칼라 함수 $V$의 기울기(Gradient, $\\text{grad } V$)의 수학적 의미와 연산자는?",
+    "answer": "$\\nabla V = \\left( \\frac{\\partial V}{\\partial x}\\mathbf{i} + \\frac{\\partial V}{\\partial y}\\mathbf{j} + \\frac{\\partial V}{\\partial z}\\mathbf{k} \\right)$\n\n최대 증가율의 방향과 크기를 나타냄"
+  },
+  {
+    "id": "em-1-4",
+    "chapter": "전기자기학",
+    "topic": "1. 벡터",
+    "question": "벡터 $\\mathbf{A}$의 발산(Divergence, $\\text{div } \\mathbf{A}$) 연산식은?",
+    "answer": "$\\nabla \\cdot \\mathbf{A} = \\frac{\\partial A_x}{\\partial x} + \\frac{\\partial A_y}{\\partial y} + \\frac{\\partial A_z}{\\partial z}$"
+  },
+  {
+    "id": "em-1-5",
+    "chapter": "전기자기학",
+    "topic": "1. 벡터",
+    "question": "발산 정리 (Divergence Theorem)의 수식은?",
+    "answer": "$\\int_V (\\nabla \\cdot \\mathbf{A}) dv = \\oint_S \\mathbf{A} \\cdot d\\mathbf{s}$"
+  },
+  {
+    "id": "em-1-6",
+    "chapter": "전기자기학",
+    "topic": "1. 벡터",
+    "question": "스토크스 정리 (Stokes' Theorem)의 수식은?",
+    "answer": "$\\int_S (\\nabla \\times \\mathbf{A}) \\cdot d\\mathbf{s} = \\oint_L \\mathbf{A} \\cdot d\\mathbf{l}$"
+  },
+  {
+    "id": "em-2-1",
+    "chapter": "전기자기학",
+    "topic": "2. 쿨롱의 힘",
+    "question": "진공 중 두 점전하 $Q_1, Q_2$ 사이에 작용하는 정전기력 $F$는?",
     "answer": "$F = \\frac{1}{4\\pi\\varepsilon_0} \\frac{Q_1 Q_2}{r^2} = 9 \\times 10^9 \\frac{Q_1 Q_2}{r^2} \\, [\\text{N}]$"
   },
   {
-    "id": "em-2",
+    "id": "em-2-2",
     "chapter": "전기자기학",
-    "topic": "진공 중의 유전율",
-    "question": "진공 또는 공기 중의 유전율 $\\varepsilon_0$의 값과 단위는?",
+    "topic": "2. 쿨롱의 힘",
+    "question": "진공 중의 유전율 $\\varepsilon_0$ 의 값은?",
     "answer": "$\\varepsilon_0 = \\frac{1}{36\\pi} \\times 10^{-9} \\approx 8.855 \\times 10^{-12} \\, [\\text{F/m}]$"
   },
   {
-    "id": "em-3",
+    "id": "em-3-1",
     "chapter": "전기자기학",
-    "topic": "점전하의 전계와 전위",
-    "question": "점전하 $Q$로부터 거리 $r$만큼 떨어진 점의 전계의 세기 $E$와 전위 $V$는?",
-    "answer": "$E = \\frac{1}{4\\pi\\varepsilon_0} \\frac{Q}{r^2} \\, [\\text{V/m}]$\n\n$V = \\frac{1}{4\\pi\\varepsilon_0} \\frac{Q}{r} \\, [\\text{V}]$"
+    "topic": "3. 전계와 전기력선",
+    "question": "전계의 세기 $E$ 와 점전하 $Q$ 가 받는 힘 $F$ 의 관계는?",
+    "answer": "$F = QE$ 즉, $E = \\frac{F}{Q}$"
   },
   {
-    "id": "em-4",
+    "id": "em-3-2",
     "chapter": "전기자기학",
-    "topic": "전계와 전위의 관계",
-    "question": "전계 $E$와 전위 $V$의 미분 관계식은?",
-    "answer": "$E = -\\nabla V = -\\text{grad } V$\n\n(전계는 전위경도의 음수와 같다)"
+    "topic": "3. 전계와 전기력선",
+    "question": "점전하 $Q$ 로부터 거리 $r$ 떨어진 곳의 전계의 세기 $E$는?",
+    "answer": "$E = \\frac{Q}{4\\pi\\varepsilon_0 r^2} \\, [\\text{V/m}]$"
   },
   {
-    "id": "em-5",
+    "id": "em-4-1",
     "chapter": "전기자기학",
-    "topic": "구도체의 정전용량",
-    "question": "반지름이 $a$인 고립 구도체의 정전용량 $C$는?",
+    "topic": "4. 전기력선",
+    "question": "전하 $Q$ 에서 발생하는 총 전기력선의 수는?",
+    "answer": "$N = \\frac{Q}{\\varepsilon_0}$ (가우스 정리)"
+  },
+  {
+    "id": "em-4-2",
+    "chapter": "전기자기학",
+    "topic": "4. 전기력선",
+    "question": "전기력선의 주요 성질 중 도체 내부에서의 전계의 세기는?",
+    "answer": "$E = 0$ (도체 내부에는 전기력선이 존재하지 않음)"
+  },
+  {
+    "id": "em-5-1",
+    "chapter": "전기자기학",
+    "topic": "5. 전위",
+    "question": "점전하 $Q$ 로부터 거리 $r$ 떨어진 점의 절대 전위 $V$는?",
+    "answer": "$V = \\frac{Q}{4\\pi\\varepsilon_0 r} \\, [\\text{V}]$"
+  },
+  {
+    "id": "em-5-2",
+    "chapter": "전기자기학",
+    "topic": "5. 전위",
+    "question": "전계 $E$와 전위 $V$의 미분 관계식(전위 경도)은?",
+    "answer": "$E = -\\nabla V = -\\text{grad } V$"
+  },
+  {
+    "id": "em-6-1",
+    "chapter": "전기자기학",
+    "topic": "6. 도체의 성질",
+    "question": "도체 표면에서의 전계의 방향과 도체 내부의 전위는?",
+    "answer": "전계 방향: 표면에 수직(법선 방향)\n내부 전위: 도체 표면과 등전위 ($V=\\text{const}$)"
+  },
+  {
+    "id": "em-7-1",
+    "chapter": "전기자기학",
+    "topic": "7. 가우스 정리",
+    "question": "가우스 정리의 적분형 수식은?",
+    "answer": "$\\oint_S \\mathbf{E} \\cdot d\\mathbf{s} = \\frac{Q}{\\varepsilon_0}$"
+  },
+  {
+    "id": "em-7-2",
+    "chapter": "전기자기학",
+    "topic": "7. 가우스 정리",
+    "question": "포아송의 방정식(Poisson's equation) 수식은?",
+    "answer": "$\\nabla^2 V = -\\frac{\\rho_v}{\\varepsilon}$"
+  },
+  {
+    "id": "em-7-3",
+    "chapter": "전기자기학",
+    "topic": "7. 가우스 정리",
+    "question": "라플라스 방정식(Laplace's equation) 수식은?",
+    "answer": "$\\nabla^2 V = 0$ (공간 전하가 없는 곳 $\\rho_v = 0$)"
+  },
+  {
+    "id": "em-8-1",
+    "chapter": "전기자기학",
+    "topic": "8. 전속",
+    "question": "전하 $Q$ 에서 발산되는 전속(Electric flux) $\\psi$ 의 크기는?",
+    "answer": "$\\psi = Q \\, [\\text{C}]$ (매질에 관계없이 일정)"
+  },
+  {
+    "id": "em-8-2",
+    "chapter": "전기자기학",
+    "topic": "8. 전속",
+    "question": "전속밀도 $D$ 와 전계 $E$ 의 관계식은?",
+    "answer": "$D = \\varepsilon E = \\varepsilon_0 \\varepsilon_s E \\, [\\text{C/m}^2]$"
+  },
+  {
+    "id": "em-9-1",
+    "chapter": "전기자기학",
+    "topic": "9. 가우스 법칙 해석",
+    "question": "선전하 밀도가 $\\lambda$ 인 무한장 직선 도선으로부터 거리 $r$인 점의 전계 $E$는?",
+    "answer": "$E = \\frac{\\lambda}{2\\pi\\varepsilon_0 r} \\, [\\text{V/m}]$"
+  },
+  {
+    "id": "em-9-2",
+    "chapter": "전기자기학",
+    "topic": "9. 가우스 법칙 해석",
+    "question": "면전하 밀도가 $\\sigma$ 인 무한 평면의 전계 $E$는?",
+    "answer": "$E = \\frac{\\sigma}{2\\varepsilon_0} \\, [\\text{V/m}]$ (거리에 무관)"
+  },
+  {
+    "id": "em-9-3",
+    "chapter": "전기자기학",
+    "topic": "9. 가우스 법칙 해석",
+    "question": "전하밀도 $\\pm\\sigma$ 인 두 평행 무한 평면 사이의 전계 $E$는?",
+    "answer": "$E = \\frac{\\sigma}{\\varepsilon_0} \\, [\\text{V/m}]$ (외부 전계는 0)"
+  },
+  {
+    "id": "em-10-1",
+    "chapter": "전기자기학",
+    "topic": "10. 전기 쌍극자",
+    "question": "전기 쌍극자 모멘트 $M$ 의 정의식은? (전하 $Q$, 거리 $\\delta$)",
+    "answer": "$M = Q\\delta \\, [\\text{C}\\cdot\\text{m}]$"
+  },
+  {
+    "id": "em-10-2",
+    "chapter": "전기자기학",
+    "topic": "10. 전기 쌍극자",
+    "question": "전기 쌍극자에서 중심으로부터 거리 $r$, 각도 $\\theta$인 점의 전위 $V$는?",
+    "answer": "$V = \\frac{M \\cos\\theta}{4\\pi\\varepsilon_0 r^2} \\, [\\text{V}]$"
+  },
+  {
+    "id": "em-10-3",
+    "chapter": "전기자기학",
+    "topic": "10. 전기 쌍극자",
+    "question": "전기 쌍극자의 전계 세기 $E$ 는 어떤 요소에 반비례하는가?",
+    "answer": "거리의 세제곱($r^3$)에 반비례\n\n$E = \\frac{M}{4\\pi\\varepsilon_0 r^3} \\sqrt{1 + 3\\cos^2\\theta}$"
+  },
+  {
+    "id": "em-11-1",
+    "chapter": "전기자기학",
+    "topic": "11. 정전용량",
+    "question": "반지름이 $a$ 인 구도체의 정전용량 $C$ 는?",
     "answer": "$C = 4\\pi\\varepsilon_0 a \\, [\\text{F}]$"
   },
   {
-    "id": "em-6",
+    "id": "em-11-2",
     "chapter": "전기자기학",
-    "topic": "동심구의 정전용량",
-    "question": "내구의 반지름 $a$, 외구의 내반지름 $b$인 동심구 콘덴서의 정전용량 $C$는?",
-    "answer": "$C = \\frac{4\\pi\\varepsilon_0}{\\frac{1}{a} - \\frac{1}{b}} = \\frac{4\\pi\\varepsilon_0 a b}{b - a} \\, [\\text{F}]$"
+    "topic": "11. 정전용량",
+    "question": "동심 구 콘덴서 (내구 반경 $a$, 외구 반경 $b$)의 정전용량 $C$ 는?",
+    "answer": "$C = \\frac{4\\pi\\varepsilon_0 a b}{b - a} \\, [\\text{F}]$"
   },
   {
-    "id": "em-7",
+    "id": "em-11-3",
     "chapter": "전기자기학",
-    "topic": "평행판 콘덴서",
-    "question": "면적이 $S$, 극판 간격이 $d$인 평행판 콘덴서의 정전용량 $C$는?",
-    "answer": "$C = \\varepsilon_0 \\frac{S}{d} \\, [\\text{F}]$"
+    "topic": "11. 정전용량",
+    "question": "원주형(동축 케이블) 콘덴서의 단위 길이당 정전용량 $C$ 는? (내원주 $a$, 외원주 $b$)",
+    "answer": "$C = \\frac{2\\pi\\varepsilon_0}{\\ln(b/a)} \\, [\\text{F/m}]$"
   },
   {
-    "id": "em-8",
+    "id": "em-11-4",
     "chapter": "전기자기학",
-    "topic": "원주(동축 케이블)의 정전용량",
-    "question": "길이 $l$, 내부 도체 반지름 $a$, 외부 도체 내반지름 $b$인 동축 원통의 정전용량 $C$는?",
-    "answer": "$C = \\frac{2\\pi\\varepsilon_0 l}{\\ln(b/a)} \\, [\\text{F}]$\n\n단위 길이당 정전용량: $\\frac{2\\pi\\varepsilon_0}{\\ln(b/a)} \\, [\\text{F/m}]$"
+    "topic": "11. 정전용량",
+    "question": "평행판 콘덴서의 정전용량 $C$ 는? (면적 $S$, 간격 $d$)",
+    "answer": "$C = \\varepsilon \\frac{S}{d} \\, [\\text{F}]$"
   },
   {
-    "id": "em-9",
+    "id": "em-11-5",
     "chapter": "전기자기학",
-    "topic": "콘덴서의 축적 에너지",
-    "question": "정전용량 $C$인 콘덴서에 전압 $V$를 인가하여 전하 $Q$가 충전되었을 때, 축적되는 정전에너지 $W$는?",
-    "answer": "$W = \\frac{1}{2} Q V = \\frac{1}{2} C V^2 = \\frac{Q^2}{2C} \\, [\\text{J}]$"
+    "topic": "11. 전위계수",
+    "question": "도체계에서 전위계수 $p_{rs}$의 성질 중 대칭성과 크기 관계는?",
+    "answer": "1. $p_{rs} = p_{sr}$ (대칭성)\n2. $p_{rr} \\ge p_{rs} > 0$"
   },
   {
-    "id": "em-10",
+    "id": "em-11-6",
     "chapter": "전기자기학",
-    "topic": "전기 쌍극자의 전위와 전계",
-    "question": "쌍극자 모멘트 $M=Q\\delta$ 인 전기 쌍극자에서 거리 $r$, 중심축과 이루는 각이 $\\theta$인 점의 전위 $V$와 전계 $E$는?",
-    "answer": "$V = \\frac{M \\cos\\theta}{4\\pi\\varepsilon_0 r^2} \\, [\\text{V}]$\n\n$E = \\frac{M}{4\\pi\\varepsilon_0 r^3} \\sqrt{1 + 3\\cos^2\\theta} \\, [\\text{V/m}]$"
+    "topic": "11. 용량계수와 유도계수",
+    "question": "용량계수 $q_{rr}$ 와 유도계수 $q_{rs}$ 의 성질(부호)은?",
+    "answer": "용량계수: $q_{rr} > 0$ (항상 양수)\n유도계수: $q_{rs} \\le 0$ (항상 영 또는 음수)\n대칭성: $q_{rs} = q_{sr}$"
   },
   {
-    "id": "em-11",
+    "id": "em-12-1",
     "chapter": "전기자기학",
-    "topic": "선전하의 전계와 전위차",
-    "question": "선전하밀도 $\\lambda$인 무한장 직선 전하로부터 거리 $r$인 점의 전계 $E$와 전위차 $V_{ab}$는?",
-    "answer": "$E = \\frac{\\lambda}{2\\pi\\varepsilon_0 r} \\, [\\text{V/m}]$\n\n$V_{ab} = \\frac{\\lambda}{2\\pi\\varepsilon_0} \\ln\\left(\\frac{b}{a}\\right) \\, [\\text{V}]$"
+    "topic": "12. 콘덴서의 연결",
+    "question": "정전용량 $C_1, C_2$ 콘덴서의 직렬연결 시 합성 정전용량 $C$는?",
+    "answer": "$C = \\frac{C_1 C_2}{C_1 + C_2} = \\frac{1}{\\frac{1}{C_1} + \\frac{1}{C_2}}$"
   },
   {
-    "id": "em-12",
+    "id": "em-12-2",
     "chapter": "전기자기학",
-    "topic": "무한 평면 전하의 전계",
-    "question": "면전하밀도 $\\sigma$인 무한 평면 전하에 의한 전계의 세기 $E$는?",
-    "answer": "$E = \\frac{\\sigma}{2\\varepsilon_0} \\, [\\text{V/m}]$\n\n(거리에 관계없이 일정함)"
+    "topic": "12. 콘덴서의 연결",
+    "question": "정전용량 $C_1, C_2$ 콘덴서의 병렬연결 시 합성 정전용량 $C$는?",
+    "answer": "$C = C_1 + C_2$"
   },
   {
-    "id": "em-13",
+    "id": "em-13-1",
     "chapter": "전기자기학",
-    "topic": "두 평행 무한 평면 전하 사이의 전계",
-    "question": "면전하밀도가 각각 $+\\sigma, -\\sigma$인 두 평행 평면 전하 사이의 전계 $E$는?",
-    "answer": "$E = \\frac{\\sigma}{\\varepsilon_0} \\, [\\text{V/m}]$"
+    "topic": "13. 도체계의 에너지",
+    "question": "콘덴서에 축적되는 정전에너지 $W$ 의 3가지 기본 식은?",
+    "answer": "$W = \\frac{1}{2}QV = \\frac{1}{2}CV^2 = \\frac{Q^2}{2C} \\, [\\text{J}]$"
   },
   {
-    "id": "em-14",
+    "id": "em-13-2",
     "chapter": "전기자기학",
-    "topic": "가우스 정리 (적분형)",
-    "question": "가우스 정리의 적분형 수식과 그 의미는?",
-    "answer": "$\\oint_S \\mathbf{E} \\cdot d\\mathbf{S} = \\frac{Q}{\\varepsilon_0}$\n\n폐곡면을 통과하는 총 전속은 그 내부에 있는 총 전하량의 $1/\\varepsilon_0$ 배와 같다."
+    "topic": "13. 도체계의 에너지",
+    "question": "단위 체적당 축적되는 에너지(에너지 밀도) $w$ 는?",
+    "answer": "$w = \\frac{1}{2}\\varepsilon E^2 = \\frac{1}{2}DE = \\frac{D^2}{2\\varepsilon} \\, [\\text{J/m}^3]$"
   },
   {
-    "id": "em-15",
+    "id": "em-14-1",
     "chapter": "전기자기학",
-    "topic": "가우스 정리 (미분형, 포아송 방정식)",
-    "question": "가우스 정리의 미분형 식과, 이를 전위 $V$로 표현한 포아송 방정식은?",
-    "answer": "가우스 정리 미분형: $\\nabla \\cdot \\mathbf{D} = \\rho_v$\n\n포아송 방정식: $\\nabla^2 V = -\\frac{\\rho_v}{\\varepsilon}$"
+    "topic": "14. 전기 분극",
+    "question": "분극의 세기 $P$ 와 전속밀도 $D$, 전계 $E$ 의 관계식은?",
+    "answer": "$P = D - \\varepsilon_0 E = \\varepsilon_0(\\varepsilon_s - 1)E \\, [\\text{C/m}^2]$"
   },
   {
-    "id": "em-16",
+    "id": "em-14-2",
     "chapter": "전기자기학",
-    "topic": "전기 영상법 - 무한 평면과 점전하",
-    "question": "접지된 무한 도체 평면으로부터 거리 $a$에 점전하 $+Q$가 있을 때, 평면 반대쪽 거리 $a$에 있다고 가정하는 영상 전하의 크기는?",
-    "answer": "영상 전하 = $-Q$\n\n작용하는 힘(흡인력): $F = -\\frac{Q^2}{4\\pi\\varepsilon_0 (2a)^2} \\, [\\text{N}]$"
+    "topic": "14. 전기 분극",
+    "question": "전기 분극율 $\\chi_e$ 의 정의는?",
+    "answer": "$\\chi_e = \\varepsilon_0(\\varepsilon_s - 1)$\n\n$P = \\chi_e E$"
   },
   {
-    "id": "em-17",
+    "id": "em-14-3",
     "chapter": "전기자기학",
-    "topic": "유전체의 경계 조건",
-    "question": "서로 다른 유전율 $\\varepsilon_1, \\varepsilon_2$를 갖는 유전체의 경계면에서 전속밀도 $D$와 전계 $E$의 경계 조건은?",
-    "answer": "$D_{1n} = D_{2n}$ (전속밀도의 법선 성분이 연속)\n\n$E_{1t} = E_{2t}$ (전계의 접선 성분이 연속)\n\n굴절의 법칙: $\\frac{\\tan\\theta_1}{\\tan\\theta_2} = \\frac{\\varepsilon_1}{\\varepsilon_2}$"
+    "topic": "14. 체적 전하 밀도",
+    "question": "분극의 세기 $P$ 의 발산(Divergence)이 가지는 의미는?",
+    "answer": "$\\nabla \\cdot \\mathbf{P} = -\\rho_p$\n(분극 전하 밀도의 감소를 의미)"
   },
   {
-    "id": "em-18",
+    "id": "em-15-1",
     "chapter": "전기자기학",
-    "topic": "유전체에 작용하는 힘 (맥스웰 응력)",
-    "question": "단위 체적당 혹은 단위 면적당 유전체 경계면에 작용하는 힘(정전 응력) $f$는?",
-    "answer": "$f = \\frac{1}{2}\\varepsilon E^2 = \\frac{1}{2}DE = \\frac{D^2}{2\\varepsilon} \\, [\\text{N/m}^2]$"
+    "topic": "15. 유전체 경계 조건",
+    "question": "서로 다른 유전체 경계면에서 전계와 전속밀도의 경계 조건은?",
+    "answer": "1. 전계의 접선성분 연속: $E_1 \\sin\\theta_1 = E_2 \\sin\\theta_2$\n2. 전속밀도의 법선성분 연속: $D_1 \\cos\\theta_1 = D_2 \\cos\\theta_2$"
   },
   {
-    "id": "em-19",
+    "id": "em-15-2",
     "chapter": "전기자기학",
-    "topic": "비오-사바르의 법칙",
-    "question": "도선에 전류 $I$가 흐를 때 미소 길이 $dl$에 의해 거리 $r$만큼 떨어진 곳에 생기는 미소 자계 $dH$는?",
-    "answer": "$dH = \\frac{I dl \\sin\\theta}{4\\pi r^2} \\, [\\text{AT/m}]$"
+    "topic": "15. 유전체 경계 조건",
+    "question": "유전체 경계면에서의 굴절의 법칙 식은?",
+    "answer": "$\\frac{\\tan\\theta_1}{\\tan\\theta_2} = \\frac{\\varepsilon_1}{\\varepsilon_2}$"
   },
   {
-    "id": "em-20",
+    "id": "em-16-1",
     "chapter": "전기자기학",
-    "topic": "무한장 직선 전류에 의한 자계",
-    "question": "무한히 긴 직선 도선에 전류 $I$가 흐를 때, 거리 $r$만큼 떨어진 점의 자계의 세기 $H$는?",
+    "topic": "16. 맥스웰 응력",
+    "question": "경계면에 수직으로 전계가 가해질 때, 유전율이 큰 쪽에서 작은 쪽으로 작용하는 힘(정전 응력) $f$는?",
+    "answer": "$f = \\frac{1}{2} D^2 \\left( \\frac{1}{\\varepsilon_2} - \\frac{1}{\\varepsilon_1} \\right) \\, [\\text{N/m}^2]$"
+  },
+  {
+    "id": "em-16-2",
+    "chapter": "전기자기학",
+    "topic": "16. 맥스웰 응력",
+    "question": "경계면에 평행으로 전계가 가해질 때, 유전율이 큰 쪽에서 작은 쪽으로 작용하는 힘(정전 응력) $f$는?",
+    "answer": "$f = \\frac{1}{2} E^2 (\\varepsilon_1 - \\varepsilon_2) \\, [\\text{N/m}^2]$"
+  },
+  {
+    "id": "em-17-1",
+    "chapter": "전기자기학",
+    "topic": "17. 복합 유전체",
+    "question": "평행판 콘덴서 극판에 수직으로 유전체 $\\varepsilon_1, \\varepsilon_2$를 채웠을 때 합성 정전용량은 어느 연결과 같은가?",
+    "answer": "콘덴서의 **병렬** 연결과 동일\n$C = C_1 + C_2$"
+  },
+  {
+    "id": "em-17-2",
+    "chapter": "전기자기학",
+    "topic": "17. 복합 유전체",
+    "question": "평행판 콘덴서 극판에 나란하게 유전체 $\\varepsilon_1, \\varepsilon_2$를 채웠을 때 합성 정전용량은 어느 연결과 같은가?",
+    "answer": "콘덴서의 **직렬** 연결과 동일\n$C = \\frac{C_1 C_2}{C_1 + C_2}$"
+  },
+  {
+    "id": "em-18-1",
+    "chapter": "전기자기학",
+    "topic": "18. 전기 영상법",
+    "question": "무한 도체 평면과 거리 $a$ 만큼 떨어진 점전하 $+Q$ 에 의해 평면에 유도되는 영상전하의 크기와 위치는?",
+    "answer": "평면 반대쪽 거리 $a$ 의 위치에 $-Q$ 의 영상전하 존재"
+  },
+  {
+    "id": "em-18-2",
+    "chapter": "전기자기학",
+    "topic": "18. 전기 영상법",
+    "question": "접지 구도체(반경 $a$) 중심에서 거리 $d$ 에 있는 점전하 $+Q$ 의 영상전하 $Q'$ 와 위치 $x'$ 는?",
+    "answer": "크기: $Q' = -\\frac{a}{d}Q$\n\n위치: $x' = \\frac{a^2}{d}$"
+  },
+  {
+    "id": "em-19-1",
+    "chapter": "전기자기학",
+    "topic": "19. 전도 전류",
+    "question": "도전율 $\\sigma$, 전계 $E$ 인 도체에 흐르는 전도 전류 밀도 $i$ (옴의 법칙의 미분형)는?",
+    "answer": "$i = \\sigma E = k E \\, [\\text{A/m}^2]$ ($k$: 도전율)"
+  },
+  {
+    "id": "em-21-1",
+    "chapter": "전기자기학",
+    "topic": "21. 저항",
+    "question": "고유저항 $\\rho$, 단면적 $S$, 길이 $l$ 인 도체의 저항 $R$ 은?",
+    "answer": "$R = \\rho \\frac{l}{S} = \\frac{l}{\\sigma S} \\, [\\Omega]$"
+  },
+  {
+    "id": "em-21-2",
+    "chapter": "전기자기학",
+    "topic": "21. 저항",
+    "question": "정전용량 $C$ 와 도체의 저항 $R$ 사이의 관계식(누설 저항)은?",
+    "answer": "$RC = \\rho \\varepsilon$"
+  },
+  {
+    "id": "em-22-1",
+    "chapter": "전기자기학",
+    "topic": "22. 자하에 의한 자계",
+    "question": "자극의 세기 $m_1, m_2$ 인 두 자극 사이에 작용하는 쿨롱의 법칙 식은?",
+    "answer": "$F = \\frac{m_1 m_2}{4\\pi\\mu_0 r^2} \\, [\\text{N}]$"
+  },
+  {
+    "id": "em-22-2",
+    "chapter": "전기자기학",
+    "topic": "22. 자하에 의한 자계",
+    "question": "진공 중 투자율 $\\mu_0$ 의 값은?",
+    "answer": "$\\mu_0 = 4\\pi \\times 10^{-7} \\, [\\text{H/m}]$"
+  },
+  {
+    "id": "em-22-3",
+    "chapter": "전기자기학",
+    "topic": "22. 자하에 의한 자계",
+    "question": "자극의 세기 $m$ 에서 반경 $r$ 떨어진 점의 자계의 세기 $H$ 는?",
+    "answer": "$H = \\frac{m}{4\\pi\\mu_0 r^2} \\, [\\text{AT/m}]$"
+  },
+  {
+    "id": "em-23-1",
+    "chapter": "전기자기학",
+    "topic": "23. 비오-사바르의 법칙",
+    "question": "비오-사바르의 법칙 미소 자계 $dH$ 구하는 공식은?",
+    "answer": "$dH = \\frac{I dl \\sin\\theta}{4\\pi r^2}$"
+  },
+  {
+    "id": "em-24-1",
+    "chapter": "전기자기학",
+    "topic": "24. 무한 직선 전류",
+    "question": "무한장 직선 도선에 전류 $I$ 가 흐를 때, 거리 $r$인 점의 자계 $H$ 는?",
     "answer": "$H = \\frac{I}{2\\pi r} \\, [\\text{AT/m}]$"
   },
   {
-    "id": "em-21",
+    "id": "em-24-2",
     "chapter": "전기자기학",
-    "topic": "로렌츠의 힘 (전자력)",
-    "question": "자속밀도 $B$의 자계 내에서 전하 $q$가 속도 $v$로 운동할 때 받는 힘 $F$는?",
-    "answer": "$\\mathbf{F} = q(\\mathbf{v} \\times \\mathbf{B})$\n\n크기: $F = qvB\\sin\\theta \\, [\\text{N}]$"
-  },
-  {
-    "id": "em-22",
-    "chapter": "전기자기학",
-    "topic": "도선이 받는 전자력 (플레밍의 왼손 법칙)",
-    "question": "자속밀도 $B$ 내에서 길이 $l$의 도선에 전류 $I$가 흐를 때 받는 힘 $F$는?",
-    "answer": "$\\mathbf{F} = I(\\mathbf{l} \\times \\mathbf{B})$\n\n크기: $F = IBl\\sin\\theta \\, [\\text{N}]$"
-  },
-  {
-    "id": "em-23",
-    "chapter": "전기자기학",
-    "topic": "평행 왕복 도선에 작용하는 힘",
-    "question": "거리 $d$만큼 떨어진 두 무한 평행 도선에 전류 $I_1, I_2$가 흐를 때 단위 길이당 작용하는 힘 $F$는?",
-    "answer": "$F = \\frac{\\mu_0 I_1 I_2}{2\\pi d} = \\frac{2 I_1 I_2}{d} \\times 10^{-7} \\, [\\text{N/m}]$\n\n(동일 방향 전류: 흡인력, 반대 방향 전류: 반발력)"
-  },
-  {
-    "id": "em-24",
-    "chapter": "전기자기학",
-    "topic": "패러데이-렌츠의 전자유도 법칙",
-    "question": "코일의 감은 횟수가 $N$이고 자속 $\\phi$가 시간 $t$에 따라 변할 때 유도 기전력 $e$는?",
-    "answer": "$e = -N \\frac{d\\phi}{dt} \\, [\\text{V}]$"
-  },
-  {
-    "id": "em-25",
-    "chapter": "전기자기학",
-    "topic": "자기 인덕턴스 에너지",
-    "question": "인덕턴스 $L$ 인 코일에 전류 $I$ 가 흐를 때 축적되는 자기에너지 $W$는?",
-    "answer": "$W = \\frac{1}{2} L I^2 \\, [\\text{J}]$"
-  },
-  {
-    "id": "em-26",
-    "chapter": "전기자기학",
-    "topic": "원형 선전류 중심의 자계",
-    "question": "반지름 $a$ 인 원형 도선에 전류 $I$ 가 흐를 때, 원의 중심에서의 자계의 세기 $H$는?",
+    "topic": "24. 원형 선전류",
+    "question": "반경 $a$ 인 원형 코일에 전류 $I$ 가 흐를 때, 중심에서의 자계 $H$ 는?",
     "answer": "$H = \\frac{I}{2a} \\, [\\text{AT/m}]$"
   },
   {
-    "id": "em-27",
+    "id": "em-24-3",
     "chapter": "전기자기학",
-    "topic": "솔레노이드 중심의 자계",
-    "question": "단위 길이당 권수가 $n$ 인 무한장 환상 솔레노이드 중심의 자계의 세기 $H$는?",
-    "answer": "$H = nI \\, [\\text{AT/m}]$"
+    "topic": "24. 무한장 솔레노이드",
+    "question": "단위 길이당 권수 $n$ 인 무한장 솔레노이드 내부의 자계 $H$ 는?",
+    "answer": "$H = n I \\, [\\text{AT/m}]$ (위치에 관계없이 평등 자계)"
   },
   {
-    "id": "em-28",
+    "id": "em-24-4",
     "chapter": "전기자기학",
-    "topic": "앙페르의 주회 적분 법칙",
-    "question": "임의의 폐곡선에 대한 자계 $H$ 의 선적분은 무엇과 같은가?",
-    "answer": "$\\oint \\mathbf{H} \\cdot d\\mathbf{l} = \\sum I$\n\n(폐곡선 내부를 통과하는 총 전류의 합과 같다)"
+    "topic": "24. 환상 솔레노이드",
+    "question": "평균 반경 $r$, 총 권수 $N$ 인 환상 솔레노이드 내부의 자계 $H$ 는?",
+    "answer": "$H = \\frac{NI}{2\\pi r} \\, [\\text{AT/m}]$"
   },
   {
-    "id": "em-29",
+    "id": "em-26-1",
     "chapter": "전기자기학",
-    "topic": "자성체의 자화의 세기",
-    "question": "자성체의 자화의 세기 $J$ 와 자계 $H$ 의 관계식은? (자화율 $\\chi$ 이용)",
-    "answer": "$J = \\mu_0(\\mu_s - 1)H = \\chi H \\, [\\text{Wb/m}^2]$"
+    "topic": "26. 전자력 (플레밍 왼손 법칙)",
+    "question": "자속밀도 $B$ 내에서 길이 $l$ 도선에 전류 $I$ 가 흐를 때 받는 힘 $F$ 는?",
+    "answer": "$F = I B l \\sin\\theta \\, [\\text{N}]$"
   },
   {
-    "id": "em-30",
+    "id": "em-26-2",
     "chapter": "전기자기학",
-    "topic": "자기회로의 자기 저항",
-    "question": "길이 $l$, 단면적 $S$, 투자율 $\\mu$ 인 자성체의 자기 저항 $R_m$ 은?",
+    "topic": "26. 평행 도선 간의 힘",
+    "question": "간격 $d$ 인 평행 왕복 도선에 전류 $I_1, I_2$ 가 흐를 때 단위 길이당 작용하는 힘 $F$ 는?",
+    "answer": "$F = \\frac{\\mu_0 I_1 I_2}{2\\pi d} = \\frac{2 I_1 I_2}{d} \\times 10^{-7} \\, [\\text{N/m}]$"
+  },
+  {
+    "id": "em-27-1",
+    "chapter": "전기자기학",
+    "topic": "27. 로렌츠의 힘",
+    "question": "자속밀도 $B$ 에서 전하 $q$ 가 속도 $v$ 로 이동할 때 받는 힘 $F$ 는?",
+    "answer": "$F = q(v \\times B) = qvB\\sin\\theta \\, [\\text{N}]$"
+  },
+  {
+    "id": "em-27-2",
+    "chapter": "전기자기학",
+    "topic": "27. 홀 효과",
+    "question": "홀 효과(Hall Effect)에서 발생하는 홀 기전력 $V_H$ 의 식은?",
+    "answer": "$V_H = R_H \\frac{IB}{d} = \\frac{1}{nq} \\frac{IB}{d}$"
+  },
+  {
+    "id": "em-28-1",
+    "chapter": "전기자기학",
+    "topic": "28. 자성체",
+    "question": "강자성체, 상자성체, 반자성체의 비투자율 $\\mu_s$ 의 크기 관계는?",
+    "answer": "강자성체: $\\mu_s \\gg 1$\n상자성체: $\\mu_s > 1$\n반자성체(역자성체): $\\mu_s < 1$"
+  },
+  {
+    "id": "em-28-2",
+    "chapter": "전기자기학",
+    "topic": "28. 자화의 세기",
+    "question": "자화의 세기 $J$ 와 자화율 $\\chi$ 의 관계식은?",
+    "answer": "$J = \\mu_0(\\mu_s - 1)H = \\chi H$"
+  },
+  {
+    "id": "em-28-3",
+    "chapter": "전기자기학",
+    "topic": "28. 강자성체",
+    "question": "강자성체의 대표적인 물질 3가지는?",
+    "answer": "철(Fe), 니켈(Ni), 코발트(Co)"
+  },
+  {
+    "id": "em-28-4",
+    "chapter": "전기자기학",
+    "topic": "28. 자계의 경계 조건",
+    "question": "서로 다른 두 자성체 경계면에서 자속밀도 $B$와 자계 $H$의 경계 조건은?",
+    "answer": "1. $B_{1n} = B_{2n}$ (자속밀도의 법선 성분 연속)\n2. $H_{1t} = H_{2t}$ (자계의 접선 성분 연속)"
+  },
+  {
+    "id": "em-28-5",
+    "chapter": "전기자기학",
+    "topic": "28. 자화 곡선",
+    "question": "자화 곡선(B-H 곡선)에서 기울기가 나타내는 물리량은?",
+    "answer": "투자율 ($\\mu = B / H$)"
+  },
+  {
+    "id": "em-29-1",
+    "chapter": "전기자기학",
+    "topic": "29. 히스테리시스 곡선",
+    "question": "히스테리시스 곡선에서 종축(Y축)과 횡축(X축)과 만나는 점의 명칭은?",
+    "answer": "종축과 만나는 점: 잔류자기\n횡축과 만나는 점: 보자력"
+  },
+  {
+    "id": "em-29-2",
+    "chapter": "전기자기학",
+    "topic": "29. 히스테리시스 손실",
+    "question": "히스테리시스 루프(곡선)의 내부 면적이 의미하는 것은?",
+    "answer": "단위 체적당 한 사이클에 소비되는 열 에너지 (히스테리시스 손실)"
+  },
+  {
+    "id": "em-29-3",
+    "chapter": "전기자기학",
+    "topic": "29. 영구자석과 전자석",
+    "question": "영구자석과 전자석에 적합한 잔류자기와 보자력의 특성은?",
+    "answer": "영구자석: 잔류자기 큼, 보자력 큼\n전자석: 잔류자기 큼, 보자력 작음"
+  },
+  {
+    "id": "em-30-1",
+    "chapter": "전기자기학",
+    "topic": "30. 자기회로",
+    "question": "자기 저항 $R_m$ 의 공식은? (길이 $l$, 단면적 $S$, 투자율 $\\mu$)",
     "answer": "$R_m = \\frac{l}{\\mu S} \\, [\\text{AT/Wb}]$"
   },
   {
-    "id": "em-31",
+    "id": "em-30-2",
     "chapter": "전기자기학",
-    "topic": "환상 솔레노이드의 자기 인덕턴스",
-    "question": "권수 $N$, 길이 $l$, 단면적 $S$, 투자율 $\\mu$ 인 환상 솔레노이드의 자기 인덕턴스 $L$ 은?",
-    "answer": "$L = \\frac{\\mu S N^2}{l} \\, [\\text{H}]$"
+    "topic": "30. 자기회로",
+    "question": "자기회로의 옴의 법칙은? (기자력 $F$, 자속 $\\phi$)",
+    "answer": "$F = NI = \\phi R_m$"
   },
   {
-    "id": "em-32",
+    "id": "em-31-1",
     "chapter": "전기자기학",
-    "topic": "상호 인덕턴스와 결합 계수",
-    "question": "두 코일의 자기 인덕턴스가 각각 $L_1, L_2$ 이고 상호 인덕턴스가 $M$ 일 때 결합 계수 $k$ 는?",
-    "answer": "$k = \\frac{M}{\\sqrt{L_1 L_2}} \\quad (0 \\le k \\le 1)$"
+    "topic": "31. 패러데이-렌츠 법칙",
+    "question": "시간에 따라 변화하는 자속에 의해 발생하는 유도 기전력 $e$ 는?",
+    "answer": "$e = -N \\frac{d\\phi}{dt}$ (렌츠의 법칙은 '-' 부호, 즉 방해하는 방향을 의미)"
   },
   {
-    "id": "em-33",
+    "id": "em-32-1",
     "chapter": "전기자기학",
-    "topic": "변위 전류 밀도",
-    "question": "유전체에 교류 전압이 인가될 때 흐르는 변위 전류 밀도 $i_d$ 는?",
-    "answer": "$i_d = \\frac{\\partial D}{\\partial t} = \\varepsilon \\frac{\\partial E}{\\partial t} \\, [\\text{A/m}^2]$"
+    "topic": "32. 운동하는 도체의 기전력",
+    "question": "자계 $B$ 속을 속도 $v$ 로 이동하는 길이 $l$ 인 도체에 유도되는 기전력 (플레밍 오른손 법칙)은?",
+    "answer": "$e = B l v \\sin\\theta \\, [\\text{V}]$"
   },
   {
-    "id": "em-34",
+    "id": "em-33-1",
     "chapter": "전기자기학",
-    "topic": "맥스웰의 전자 방정식 1",
-    "question": "전계의 회전 $\\nabla \\times \\mathbf{E}$ (패러데이 법칙의 미분형)는 무엇과 같은가?",
-    "answer": "$\\nabla \\times \\mathbf{E} = -\\frac{\\partial \\mathbf{B}}{\\partial t}$\n\n(자속밀도의 시간적 감소율)"
+    "topic": "33. 표피효과 (침투 깊이)",
+    "question": "표피효과에서 전류가 표면으로 집중되는 현상. 침투깊이 $\\delta$ 의 공식은? (주파수 $f$, 투자율 $\\mu$, 도전율 $k$)",
+    "answer": "$\\delta = \\sqrt{\\frac{2}{\\omega \\mu k}} = \\frac{1}{\\sqrt{\\pi f \\mu k}}$\n\n(주파수, 투자율, 도전율이 클수록 침투깊이가 얕아져 표피효과가 심해짐)"
   },
   {
-    "id": "em-35",
+    "id": "em-34-1",
     "chapter": "전기자기학",
-    "topic": "맥스웰의 전자 방정식 2",
-    "question": "자계의 회전 $\\nabla \\times \\mathbf{H}$ (확장된 앙페르의 법칙)는 무엇과 같은가?",
-    "answer": "$\\nabla \\times \\mathbf{H} = \\mathbf{i} + \\frac{\\partial \\mathbf{D}}{\\partial t} = \\mathbf{i} + \\mathbf{i_d}$\n\n(전도 전류 밀도와 변위 전류 밀도의 합)"
+    "topic": "34. 자기 인덕턴스",
+    "question": "인덕턴스 $L$ 인 코일에 전류 $I$ 가 흘러 자속 $\\phi$ 가 발생할 때의 관계식은?",
+    "answer": "$L I = N \\phi$ ($N$: 권수)"
   },
   {
-    "id": "em-36",
+    "id": "em-34-2",
     "chapter": "전기자기학",
-    "topic": "전자파의 전파 속도",
-    "question": "유전율 $\\varepsilon$, 투자율 $\\mu$ 인 매질에서 전자파의 속도 $v$ 는?",
-    "answer": "$v = \\frac{1}{\\sqrt{\\varepsilon \\mu}} = \\frac{c}{\\sqrt{\\varepsilon_s \\mu_s}} \\, [\\text{m/s}]$\n\n($c$: 진공 중의 빛의 속도 $3 \\times 10^8$)"
+    "topic": "34. 축적 에너지",
+    "question": "인덕턴스 $L$ 인 코일에 전류 $I$ 가 흐를 때 축적되는 자기에너지 $W$ 는?",
+    "answer": "$W = \\frac{1}{2} L I^2 \\, [\\text{J}]$"
   },
   {
-    "id": "em-37",
+    "id": "em-35-1",
     "chapter": "전기자기학",
-    "topic": "포인팅 벡터",
-    "question": "전자계 에너지의 이동 방향과 단위 면적당 전력을 나타내는 포인팅 벡터 $\\mathbf{P}$ 의 정의는?",
-    "answer": "$\\mathbf{P} = \\mathbf{E} \\times \\mathbf{H} \\, [\\text{W/m}^2]$\n\n크기: $P = EH = \\frac{E^2}{Z_0} = H^2 Z_0$"
+    "topic": "35. 상호 인덕턴스",
+    "question": "자기 인덕턴스가 $L_1, L_2$ 이고 상호 인덕턴스가 $M$ 일 때 결합계수 $k$ 는?",
+    "answer": "$k = \\frac{M}{\\sqrt{L_1 L_2}}$"
   },
   {
-    "id": "em-38",
+    "id": "em-36-1",
     "chapter": "전기자기학",
-    "topic": "고유 임피던스 (파동 임피던스)",
-    "question": "유전율 $\\varepsilon$, 투자율 $\\mu$ 인 매질에서 고유 임피던스 $Z_0$ 는?",
-    "answer": "$Z_0 = \\frac{E}{H} = \\sqrt{\\frac{\\mu}{\\varepsilon}} \\, [\\Omega]$\n\n진공 중의 고유 임피던스 $\\approx 377\\Omega$"
+    "topic": "36. 환상 솔레노이드 인덕턴스",
+    "question": "단면적 $S$, 평균길이 $l$, 권수 $N$ 인 환상 솔레노이드의 인덕턴스 $L$ 은?",
+    "answer": "$L = \\frac{\\mu S N^2}{l}$"
   },
   {
-    "id": "em-39",
+    "id": "em-36-2",
     "chapter": "전기자기학",
-    "topic": "스넬의 법칙 (자계 경계 조건)",
-    "question": "서로 다른 투자율 $\\mu_1, \\mu_2$ 를 갖는 자성체 경계면에서의 굴절 법칙은?",
-    "answer": "$\\frac{\\tan\\theta_1}{\\tan\\theta_2} = \\frac{\\mu_1}{\\mu_2}$"
+    "topic": "36. 무한장 솔레노이드 인덕턴스",
+    "question": "단면적 $S$, 단위 길이당 권수 $n$ 인 무한장 솔레노이드의 인덕턴스 $L$ 은?",
+    "answer": "$L = \\mu S n^2 \\, [\\text{H/m}]$"
   },
   {
-    "id": "em-40",
+    "id": "em-36-3",
     "chapter": "전기자기학",
-    "topic": "유도 기전력 (플레밍의 오른손 법칙)",
-    "question": "자속밀도 $B$ 의 공간에서 길이 $l$ 인 도선이 속도 $v$ 로 이동할 때 발생하는 유도 기전력 $e$ 는?",
-    "answer": "$e = B l v \\sin\\theta \\, [\\text{V}]$\n\n벡터식: $e = (\\mathbf{v} \\times \\mathbf{B}) \\cdot \\mathbf{l}$"
+    "topic": "36. 동축 케이블 인덕턴스",
+    "question": "내구 반경 $a$, 외구 반경 $b$ 인 동축 원통(동축 케이블)의 단위 길이당 인덕턴스 $L$ 은?",
+    "answer": "$L = \\frac{\\mu}{2\\pi} \\ln \\left(\\frac{b}{a}\\right) \\, [\\text{H/m}]$"
+  },
+  {
+    "id": "em-36-4",
+    "chapter": "전기자기학",
+    "topic": "36. 평행 도선 인덕턴스",
+    "question": "반경 $a$ 이고 간격이 $d$ 인 평행 왕복 도선의 단위 길이당 인덕턴스 $L$ 은?",
+    "answer": "$L = \\frac{\\mu}{\\pi} \\ln \\left(\\frac{d}{a}\\right) \\, [\\text{H/m}]$"
+  },
+  {
+    "id": "em-36-5",
+    "chapter": "전기자기학",
+    "topic": "36. 인덕턴스 계산의 일반식",
+    "question": "인덕턴스와 정전용량의 일반적인 관계식은?",
+    "answer": "$LC = \\varepsilon \\mu$"
+  },
+  {
+    "id": "em-37-1",
+    "chapter": "전기자기학",
+    "topic": "37. 변위 전류",
+    "question": "변위 전류 밀도 $i_d$ 의 정의식은?",
+    "answer": "$i_d = \\frac{\\partial D}{\\partial t} = \\varepsilon \\frac{\\partial E}{\\partial t}$"
+  },
+  {
+    "id": "em-37-2",
+    "chapter": "전기자기학",
+    "topic": "37. 벡터 자기 포텐셜",
+    "question": "자속밀도 $\\mathbf{B}$ 와 벡터 자기 포텐셜 $\\mathbf{A}$ 의 관계식은?",
+    "answer": "$\\mathbf{B} = \\nabla \\times \\mathbf{A}$"
+  },
+  {
+    "id": "em-38-1",
+    "chapter": "전기자기학",
+    "topic": "38. 맥스웰 방정식",
+    "question": "전계의 회전 $\\nabla \\times \\mathbf{E}$ 에 대한 맥스웰 방정식은?",
+    "answer": "$\\nabla \\times \\mathbf{E} = -\\frac{\\partial \\mathbf{B}}{\\partial t}$"
+  },
+  {
+    "id": "em-38-2",
+    "chapter": "전기자기학",
+    "topic": "38. 맥스웰 방정식",
+    "question": "자계의 회전 $\\nabla \\times \\mathbf{H}$ 에 대한 맥스웰 방정식은?",
+    "answer": "$\\nabla \\times \\mathbf{H} = \\mathbf{i} + \\frac{\\partial \\mathbf{D}}{\\partial t}$"
+  },
+  {
+    "id": "em-38-3",
+    "chapter": "전기자기학",
+    "topic": "38. 고유 임피던스",
+    "question": "자유 공간에서의 파동 임피던스(고유 임피던스) $Z_0$ 의 값은?",
+    "answer": "$Z_0 = \\frac{E}{H} = \\sqrt{\\frac{\\mu_0}{\\varepsilon_0}} = 120\\pi \\approx 377 \\, [\\Omega]$"
+  },
+  {
+    "id": "em-38-4",
+    "chapter": "전기자기학",
+    "topic": "38. 전자파 속도",
+    "question": "유전율 $\\varepsilon$, 투자율 $\\mu$ 매질에서의 전자파 속도 $v$ 는?",
+    "answer": "$v = \\frac{1}{\\sqrt{\\varepsilon \\mu}}$\n\n자유공간에서 $v = 3 \\times 10^8 \\, [\\text{m/s}]$"
+  },
+  {
+    "id": "em-38-5",
+    "chapter": "전기자기학",
+    "topic": "38. 포인팅 벡터",
+    "question": "단위 시간당 단위 면적을 통과하는 전자계 에너지인 포인팅 벡터 $\\mathbf{P}$ 의 정의는?",
+    "answer": "$\\mathbf{P} = \\mathbf{E} \\times \\mathbf{H}$"
+  },
+  {
+    "id": "em-39-1",
+    "chapter": "전기자기학",
+    "topic": "39. 압전 효과",
+    "question": "수정, 전기석 등에 기계적인 힘(응력)을 가하면 표면에 전하가 나타나는 현상은?",
+    "answer": "압전 효과 (Piezoelectric Effect)"
+  },
+  {
+    "id": "em-39-2",
+    "chapter": "전기자기학",
+    "topic": "39. 펠티에 효과",
+    "question": "서로 다른 두 금속의 접합부에 전류를 흘렸을 때 접합부에서 열의 발생 또는 흡수가 일어나는 현상은?",
+    "answer": "펠티에 효과 (Peltier Effect)"
+  },
+  {
+    "id": "em-39-3",
+    "chapter": "전기자기학",
+    "topic": "39. 제벡 효과",
+    "question": "서로 다른 두 금속의 접합부에 온도차를 주면 열기전력이 발생하여 전류가 흐르는 현상은?",
+    "answer": "제벡 효과 (Seebeck Effect)"
+  },
+  {
+    "id": "em-39-4",
+    "chapter": "전기자기학",
+    "topic": "39. 톰슨 효과",
+    "question": "동일한 금속 도체에서 온도차가 있을 때 전류를 흘리면 열의 흡수나 발생이 일어나는 현상은?",
+    "answer": "톰슨 효과 (Thomson Effect)"
+  },
+  {
+    "id": "em-40-1",
+    "chapter": "전기자기학",
+    "topic": "40. 핀치 효과",
+    "question": "액체 도체에 큰 전류를 흘리면 중심부로 수축하여 끊어지려는 현상은?",
+    "answer": "핀치 효과 (Pinch Effect)"
+  },
+  {
+    "id": "em-40-2",
+    "chapter": "전기자기학",
+    "topic": "40. 바크하우젠 효과",
+    "question": "강자성체에 인가하는 자계를 서서히 증가시킬 때 자화가 계단식으로 불연속적으로 증가하는 현상은?",
+    "answer": "바크하우젠 효과 (Barkhausen Effect)"
   }
 ]
