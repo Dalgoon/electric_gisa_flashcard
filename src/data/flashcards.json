@@ -679,13 +679,6 @@
     "answer": "$V = IR \\quad [\\text{V}]$"
   },
   {
-    "id": "ct-1-2",
-    "chapter": "회로이론",
-    "topic": "1. 직류회로",
-    "question": "도체의 저항 $R$과 도전율 $k$(또는 $\\sigma$)의 관계식은?",
-    "answer": "$R = \\rho \\frac{l}{A} = \\frac{1}{k} \\frac{l}{A} \\quad [\\Omega]$"
-  },
-  {
     "id": "ct-1-3",
     "chapter": "회로이론",
     "topic": "1. 직류회로",
@@ -740,13 +733,6 @@
     "topic": "5. 유도 결합 회로",
     "question": "자기 인덕턴스 $L_1, L_2$ 이고 상호 인덕턴스 $M$ 인 두 코일의 가동 접속 합성 인덕턴스는?",
     "answer": "$L = L_1 + L_2 + 2M$"
-  },
-  {
-    "id": "ct-5-2",
-    "chapter": "회로이론",
-    "topic": "5. 유도 결합 회로",
-    "question": "결합 계수 $k$ 와 $L_1, L_2, M$ 의 관계식은?",
-    "answer": "$M = k\\sqrt{L_1 L_2} \\quad (0 \\le k \\le 1)$"
   },
   {
     "id": "ct-6-1",
