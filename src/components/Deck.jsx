@@ -7,6 +7,8 @@ const Deck = ({ cards, excludeMemorized }) => {
   const [currentCards, setCurrentCards] = useState([]);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isFlipped, setIsFlipped] = useState(false);
+  const [touchStart, setTouchStart] = useState(null);
+  const [touchEnd, setTouchEnd] = useState(null);
   const [memorizedIds, setMemorizedIds] = useState(() => {
     try {
       const saved = localStorage.getItem('memorizedIds');
@@ -67,6 +69,37 @@ const Deck = ({ cards, excludeMemorized }) => {
     setCurrentCards(shuffled);
     setCurrentIndex(0);
   };
+  
+  const resetDeck = () => {
+    setCurrentIndex(0);
+  };
+
+  // Swipe Handlers
+  const minSwipeDistance = 50;
+
+  const onTouchStart = (e) => {
+    setTouchEnd(null);
+    setTouchStart(e.targetTouches[0].clientX);
+  };
+
+  const onTouchMove = (e) => {
+    setTouchEnd(e.targetTouches[0].clientX);
+  };
+
+  const onTouchEndHandler = () => {
+    if (!touchStart || !touchEnd) return;
+    
+    const distance = touchStart - touchEnd;
+    const isLeftSwipe = distance > minSwipeDistance;
+    const isRightSwipe = distance < -minSwipeDistance;
+    
+    if (isLeftSwipe) {
+      handleNext();
+    }
+    if (isRightSwipe) {
+      handlePrev();
+    }
+  };
 
   const toggleMemorized = () => {
     if (currentCards.length === 0) return;
@@ -115,12 +148,19 @@ const Deck = ({ cards, excludeMemorized }) => {
         </div>
       </div>
 
-      <Flashcard 
-        card={currentCard} 
-        isFlipped={isFlipped} 
-        setIsFlipped={setIsFlipped}
-        isMemorized={isCurrentMemorized}
-      />
+      <div 
+        onTouchStart={onTouchStart}
+        onTouchMove={onTouchMove}
+        onTouchEnd={onTouchEndHandler}
+        style={{ width: '100%' }}
+      >
+        <Flashcard 
+          card={currentCard} 
+          isFlipped={isFlipped} 
+          setIsFlipped={setIsFlipped}
+          isMemorized={isCurrentMemorized}
+        />
+      </div>
 
       <div className="deck-controls">
         <button 
