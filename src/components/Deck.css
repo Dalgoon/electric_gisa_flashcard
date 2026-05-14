@@ -81,3 +81,18 @@
 .empty-state button:hover {
   background: var(--accent-hover);
 }
+
+/* Mobile Responsive */
+@media (max-width: 600px) {
+  .deck-controls {
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+  }
+  
+  .deck-controls > div {
+    order: -1;
+    width: 100%;
+    justify-content: center;
+  }
+}

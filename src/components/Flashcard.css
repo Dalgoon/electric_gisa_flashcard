@@ -102,3 +102,26 @@
 .katex-display {
   margin: 1rem 0;
 }
+
+/* Mobile Responsive */
+@media (max-width: 600px) {
+  .flashcard-container {
+    height: 350px;
+  }
+  
+  .flashcard-face {
+    padding: 1.5rem;
+  }
+  
+  .card-content {
+    font-size: 1.1rem;
+  }
+  
+  .flashcard-back .card-content {
+    font-size: 1.25rem;
+  }
+  
+  .katex {
+    font-size: 1em;
+  }
+}
