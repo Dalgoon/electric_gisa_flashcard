@@ -5,6 +5,11 @@ import react from '@vitejs/plugin-react'
 export default defineConfig({
   plugins: [react()],
   base: '/electric_gisa_flashcard/',
+  server: {
+    fs: {
+      allow: ['..']
+    }
+  },
   build: {
     minify: false
   }

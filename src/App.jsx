@@ -1,23 +1,36 @@
 import React, { useState, useMemo } from 'react';
 import Deck from './components/Deck';
-import flashcardsData from './data/flashcards.json';
+import defaultFlashcards from './data/flashcards.json';
+import customQuestionsRaw from '../../questions_template.md?raw';
+import { parseMarkdownCards } from './utils/mdParser';
 import './App.css';
 
 function App() {
   const [selectedChapter, setSelectedChapter] = useState('All');
   const [excludeMemorized, setExcludeMemorized] = useState(false);
 
+  // Merge default flashcards and custom flashcards from markdown template
+  const flashcardsData = useMemo(() => {
+    try {
+      const customCards = parseMarkdownCards(customQuestionsRaw);
+      return [...defaultFlashcards, ...customCards];
+    } catch (error) {
+      console.error('Failed to parse custom questions template:', error);
+      return defaultFlashcards;
+    }
+  }, [customQuestionsRaw]);
+
   // Extract unique chapters for the selector
   const chapters = useMemo(() => {
     const uniqueChapters = new Set(flashcardsData.map(card => card.chapter));
     return ['All', ...Array.from(uniqueChapters)];
-  }, []);
+  }, [flashcardsData]);
 
   // Filter cards based on selected chapter
   const currentDeck = useMemo(() => {
     if (selectedChapter === 'All') return flashcardsData;
     return flashcardsData.filter(card => card.chapter === selectedChapter);
-  }, [selectedChapter]);
+  }, [selectedChapter, flashcardsData]);
 
   return (
     <div className="app-container">
