@@ -151,10 +151,11 @@ input[type="checkbox"]:checked + .toggle-switch::after {
 .flashcard-container {
   width: 100%;
   max-width: 600px;
-  height: 400px;
+  min-height: 400px;
   perspective: 1000px;
   margin: 0 auto;
   cursor: pointer;
+  transition: height 0.3s cubic-bezier(0.4, 0.0, 0.2, 1);
 }
 
 .flashcard {
@@ -218,6 +219,17 @@ input[type="checkbox"]:checked + .toggle-switch::after {
   color: var(--accent-color);
 }
 
+.custom-badge {
+  background: rgba(168, 85, 247, 0.2);
+  border: 1px solid rgba(168, 85, 247, 0.4);
+  padding: 0.25rem 0.75rem;
+  border-radius: 1rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  color: #c084fc;
+}
+
 .card-content {
   flex: 1;
   display: flex;
@@ -268,7 +280,7 @@ input[type="checkbox"]:checked + .toggle-switch::after {
 /* Mobile Responsive */
 @media (max-width: 600px) {
   .flashcard-container {
-    height: 350px;
+    min-height: 320px;
   }
   
   .flashcard-face {
